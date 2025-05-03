@@ -1,5 +1,7 @@
-export const Table = (openEditPanel: boolean) => {
+import { Box } from "./Box";
+
+export const Table = (openEditPanel: () => void) => {
   const table = "a";
 
-  return <div>table</div>;
+  return <Box onShow={openEditPanel}>table</Box>;
 };
