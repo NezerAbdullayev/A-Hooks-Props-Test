@@ -15,6 +15,9 @@ export const Table: React.FC = () => {
     handleEditPanel,
     visibleEditPanel,
   } = useTable();
+
+  console.log("re-rendering Table");
+
   return (
     <>
       <Box className="table-container">

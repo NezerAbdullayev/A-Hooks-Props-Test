@@ -11,7 +11,7 @@ type BoxProps = {
   onShow?: () => void;
   onHide?: () => void;
   onToggle?: (visible: boolean) => void;
-  as?: ElementType; // default: 'div'
+  as?: ElementType;
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
