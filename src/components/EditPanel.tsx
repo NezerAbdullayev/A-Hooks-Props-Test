@@ -7,6 +7,8 @@ interface IEditPanel {
 }
 
 export const EditPanel = ({ visible, close }: IEditPanel) => {
+  console.log("payment edit Panel");
+
   return (
     <Box
       visible={visible}
