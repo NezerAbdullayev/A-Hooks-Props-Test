@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Box } from "./Box";
 
 interface IEditPanel {
@@ -30,3 +30,5 @@ export const EditPanel = ({ visible, close }: IEditPanel) => {
     </Box>
   );
 };
+
+export default memo(EditPanel);

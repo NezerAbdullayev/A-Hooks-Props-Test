@@ -1,19 +1,20 @@
 import React from "react";
 import { Box } from "./Box";
-import { Payment, fakePayments } from "../data";
+import { fakePayments } from "../data";
 import { RenderComponent } from "./RenderComponent";
+import EditPanel from "./EditPanel";
+import { useTable } from "../hooks/useTable";
 
-type TableProps = {
-  openEditPanel: () => void;
-};
-
-export const Table: React.FC<TableProps> = ({ openEditPanel }) => {
-  const handleEditPanel = (payment: Payment) => {
-    console.log(payment);
-  };
-
-  console.log("re-rendeirng table payment ");
-
+export const Table: React.FC = () => {
+  const {
+    count,
+    increment,
+    decrement,
+    openEditPanel,
+    closeEditPanel,
+    handleEditPanel,
+    visibleEditPanel,
+  } = useTable();
   return (
     <>
       <Box className="table-container">
@@ -48,7 +49,15 @@ export const Table: React.FC<TableProps> = ({ openEditPanel }) => {
       </Box>
 
       {/* re-render component */}
-      <RenderComponent />
+      <RenderComponent
+        count={count}
+        increment={increment}
+        decrement={decrement}
+      />
+      <div style={{ marginTop: 30 }} />
+
+      {/* edit Panel */}
+      <EditPanel visible={visibleEditPanel} close={closeEditPanel} />
     </>
   );
 };
